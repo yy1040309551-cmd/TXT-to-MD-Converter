@@ -1,0 +1,46 @@
+Python学习笔记
+
+基础语法
+
+Python是一种动态类型的编程语言
+
+变量不需要声明类型
+
+x = 10
+name = "Alice"
+pi = 3.14159
+
+数据类型
+
+数字类型包括 int float complex
+字符串可以使用单引号或双引号
+布尔值 True False
+
+列表操作
+
+创建一个列表
+fruits = ["apple", "banana", "cherry"]
+遍历列表
+for fruit in fruits:
+    print(fruit)
+添加元素
+fruits.append("orange")
+
+条件判断
+
+if score >= 90:
+    grade = "A"
+elif score >= 80:
+    grade = "B"
+else:
+    grade = "C"
+
+常用资源
+
+Python官网 https://www.python.org
+文档地址 https://docs.python.org/3/
+
+总结
+
+Python是一门易学且功能强大的语言
+适合数据分析 网站开发 自动化脚本等多种场景

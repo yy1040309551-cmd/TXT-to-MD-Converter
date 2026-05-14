@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.spec
+
+# Runtime
+config.json
+
+# Generated
+test_output/
+
+# OS
+Thumbs.db
+.DS_Store

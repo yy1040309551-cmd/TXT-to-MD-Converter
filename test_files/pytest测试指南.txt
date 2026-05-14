@@ -1,0 +1,85 @@
+使用 pytest 进行 Python 单元测试指南
+
+引言
+
+在软件开发中 测试是保证代码质量的重要手段
+pytest 是 Python 最流行的测试框架之一
+它简洁 强大 易于上手
+
+安装
+
+使用 pip 安装
+
+pip install pytest
+
+安装完成后 可以通过以下命令验证
+
+pytest --version
+
+编写第一个测试
+
+创建一个测试文件 test_example.py
+
+def test_addition():
+    assert 1 + 1 == 2
+
+def test_subtraction():
+    assert 3 - 1 == 2
+
+然后运行测试
+
+pytest test_example.py
+
+常用断言
+
+pytest 使用 Python 原生的 assert 关键字
+
+assert result == expected
+assert value is True
+assert len(items) > 0
+assert "hello" in text
+assert result is None
+
+参数化测试
+
+使用 parametrize 装饰器可以运行多组参数
+
+import pytest
+
+@pytest.mark.parametrize("a,b,expected", [
+    (1, 2, 3),
+    (0, 0, 0),
+    (-1, 1, 0),
+])
+def test_add(a, b, expected):
+    assert a + b == expected
+
+夹具 Fixtures
+
+fixture 用于在测试前后准备和清理数据
+
+import pytest
+
+@pytest.fixture
+def sample_data():
+    return {"name": "test", "value": 42}
+
+def test_with_fixture(sample_data):
+    assert sample_data["value"] == 42
+
+Mock 对象
+
+使用 unittest.mock 模拟外部依赖
+
+from unittest.mock import Mock
+
+def test_mock():
+    mock = Mock()
+    mock.get_data.return_value = "mocked"
+    assert mock.get_data() == "mocked"
+
+总结
+
+pytest 是 Python 测试的首选工具
+通过 fixture parametrize mock 等特性
+可以高效地编写和维护测试代码
