@@ -535,13 +535,6 @@ class TxtToMdConverter(TkinterDnD.Tk):
         self.progress['value'] = 100
         self.btn_convert.config(state=tk.NORMAL)
 
-        # 有成功文件时自动打开输出目录
-        if success > 0:
-            try:
-                os.startfile(self.output_dir)
-            except Exception:
-                pass
-
         if fail == 0:
             messagebox.showinfo('完成', f'全部 {success} 个文件转换成功！')
         elif success > 0:
